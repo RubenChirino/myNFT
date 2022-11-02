@@ -27,14 +27,14 @@ Run this followed commands:
 # Install dependencies (only the first time)
 npm install
 
-# Run the local server at [localhost:8080](http://127.0.0.1:8000/)
+# Run the local server at [localhost:8080](http://127.0.0.1:8000)
 php artisan serve
 
 # Run the Vite hot reload (refresh to develop)
 npm run dev
 
 # Run the migrations (create the database tables)
-npm run dev
+php artisan migrate
 ```
 
 ### Technologies
