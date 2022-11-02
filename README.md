@@ -14,12 +14,13 @@ MyNFT es un Marketplace descentralizado que se especializa en la compra de activ
 ## Dev Setup & Commands
 
 Download:
--- **[Node.js](https://nodejs.org/en/download)**
 
--- **[Composer](https://getcomposer.org)**
--- **[Laravel](https://laravel.com/docs/9.x/installation)**
--- **[MySQL](https://www.mysql.com/downloads)**
--- Or you can use: **[XAMP](https://www.apachefriends.org)**
+- **[Node.js](https://nodejs.org/en/download)**
+
+- **[Composer](https://getcomposer.org)**
+- **[Laravel](https://laravel.com/docs/9.x/installation)**
+- **[MySQL](https://www.mysql.com/downloads)**
+- Or you can use: **[XAMP](https://www.apachefriends.org)**
 
 Run this followed commands:
 
