@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('nft', function (Blueprint $table) {
             $table->id();
+            $table->string('uuid')->unique();
+            $table->string('title');
+            $table->float('price');
+            $table->string('url');
+            $table->enum('category', array('common', 'rare', 'especial', 'exceptional', 'legendary'));
             $table->timestamps();
         });
     }
