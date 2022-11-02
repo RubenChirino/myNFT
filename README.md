@@ -9,7 +9,7 @@
 
 ## MyNFT
 
-MyNFT es un Marketplace descentralizado que se especializa en la compra de activos digitales, es decir, de NFT. Su finalidad es hacer mucho más fácil y sencillo el comercio de los NFT
+MyNFT is a decentralized Marketplace that specializes in the purchase of digital assets. Its purpose is to make it much easier and simpler to trade NFTs.
 
 ## Dev Setup & Commands
 
