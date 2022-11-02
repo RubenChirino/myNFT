@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nft', function (Blueprint $table) {
+        Schema::create('nfts', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
             $table->string('title');

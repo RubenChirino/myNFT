@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,11 @@ class NftFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $title = $this->faker->sentence(),
+            'uuid' => $this->faker->uuid(),
+            'price' => $this->faker->randomNumber(4),
+            'url' => Str::slug($title),
+            'category' => $this->faker->randomElement($array = array ('common', 'rare', 'especial', 'exceptional', 'legendary'))
         ];
     }
 }

@@ -36,6 +36,9 @@ npm run dev
 
 # Run the migrations (create the database tables)
 php artisan migrate
+
+# Run the migrations & create the seeders data (create the database tables with faker data)
+php artisan migrate:refresh --seed
 ```
 
 ### Technologies
