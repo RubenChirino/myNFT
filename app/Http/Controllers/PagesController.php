@@ -25,15 +25,15 @@ class PagesController extends Controller
     }
 
     public function gallery() {
-        // $nfts = Nft::get();
-        return view('gallery');
+        $nfts = Nft::get();
+        return view('gallery', ['nfts' => $nfts]);
     }
 
-    public function admin_dashboard() {
-        return view('admin_dashboard');
+    public function dashboard() {
+        return view('dashboard');
     }
 
-    public function admin_dashboard_edit(Nft $nft) {
-        return view('admin_dashboard_edit', ['nft' => $nft]);
+    public function dashboard_edit(Nft $nft) {
+        return view('dashboard.edit', ['nft' => $nft]);
     }
 }

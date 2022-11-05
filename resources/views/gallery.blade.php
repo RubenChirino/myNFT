@@ -21,6 +21,16 @@
             </div>
         </div>
     </div>
+
+    @foreach( $nfts as $nft )
+    <p>
+        <strong>{{ $nft->id }}</strong>
+
+        <br>
+        <span>{{ $nft->title }}</span>
+    </p>
+    @endforeach
+
 </div>
 
 @endsection

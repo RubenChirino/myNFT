@@ -24,13 +24,19 @@ Route::controller(PagesController::class)->group(function () {
     /**
      * Admin Dashboard
      */
-    Route::group(['middleware' => ['auth']], function(){
+    Route::group(['middleware' => ['is_admin']], function(){
         Route::resource('nfts', NftController::class);
 
-        Route::get('admin/dashboard', 'admin_dashboard')->name('admin-dashboard');
+        Route::get('admin/dashboard', 'dashboard')->name('dashboard');
     });
 
 
 
-    Route::get('admin/dashboard/edit/{nft:slug}', 'admin_dashboard_edit')->name('edit-nft');
+    Route::get('admin/dashboard/edit/{nft:slug}', 'dashboardedit')->name('edit-nft');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__.'/auth.php';
