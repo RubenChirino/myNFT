@@ -9,6 +9,17 @@ use App\Models\Nft;
 
 class PagesController extends Controller
 {
+    /**
+     * Auth (Register / Login)
+     */
+    public function register() {
+        return view('auth/register');
+    }
+
+    public function login() {
+        return view('auth/login');
+    }
+
     public function home() {
         return view('home');
     }
