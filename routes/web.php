@@ -25,9 +25,9 @@ Route::controller(PagesController::class)->group(function () {
      * Admin Dashboard
      */
     Route::group(['middleware' => ['is_admin']], function(){
-        Route::resource('nfts', NftController::class);
-
         Route::get('admin/dashboard', 'dashboard')->name('dashboard');
+
+        Route::resource('admin/dashboard/nfts', NftController::class); // Or only NFT
     });
 
 
