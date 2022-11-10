@@ -17,7 +17,17 @@
                             <td class="px-6 py-4">
                                 <a href="" class="text-indigo-600">Editar</a>
                             </td>
-                            <td class="px-6 py-4">Eliminar</td>
+                            <td class="px-6 py-4">
+                                <form action="{{ route('nfts.destroy', $nft) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input
+                                    class="bg-gray-800 text-white rounded px-4 py-2"
+                                    type="submit"
+                                    value="Eliminar"
+                                    onclick="return confirm('Do you want to eliminate it?')">
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     </table>

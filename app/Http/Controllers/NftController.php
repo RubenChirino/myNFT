@@ -14,4 +14,9 @@ class NftController extends Controller
         ]);
     }
 
+    public function destroy(Nft $nft) {
+        $nft->delete();
+        return back();
+    }
+
 }
