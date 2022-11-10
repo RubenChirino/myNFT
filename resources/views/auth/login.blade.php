@@ -16,7 +16,7 @@
             <div>
                 <x-input-label for="email" :value="__('Email')" />
 
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus placeholder="Enter your email address..." />
 
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
@@ -28,7 +28,7 @@
                 <x-text-input id="password" class="block mt-1 w-full"
                                 type="password"
                                 name="password"
-                                required autocomplete="current-password" />
+                                required autocomplete="current-password" placeholder="Enter your password..." />
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
@@ -41,17 +41,24 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+            @if (Route::has('password.request'))
+                    <div class="w-auto">
+                        <a class="text-sm font-extrabold text-indigo-600 hover:text-indigo-700" href="{{ route('password.request') }}">
+                            {{ __('Forgot your password?') }}
+                        </a>
+                        @endif
+                    </div>
 
-                <x-primary-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
+            <div class="flex items-center justify-end mt-4">
+                 <x-primary-button>
+                     {{ __('Log in') }}
+                 </x-primary-button>
             </div>
+
+            <div class="w-auto p-5 ml-auto">
+                <a class="text-sm font-extrabold text-black-600 hover:text-indigo-700 font-medium flex items-center justify-center" href="{{ route('register') }}">{{ __('Create an Account') }}</a>
+            </div>
+
         </form>
     </x-auth-card>
 </x-guest-layout>
