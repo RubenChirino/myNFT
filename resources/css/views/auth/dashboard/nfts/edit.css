@@ -1,0 +1,22 @@
+.title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 46px;
+    /* font-family: 'Inter'; */
+}
+
+.form-container {
+    width: 80%;
+}
+
+.form-container form {
+    width: 80%;
+}
+
+/* Small devices */
+@media screen and (max-width: 768px) {
+    .form-container form {
+        width: 90%;
+    }
+}
