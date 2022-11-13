@@ -1,64 +1,91 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+  <title>Laravel</title>
 
-            <!-- Email Address -->
-            <div>
-                <x-input-label for="email" :value="__('Email')" />
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
 
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus placeholder="Enter your email address..." />
+</head>
+<body>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-5 login-section-wrapper">
+          <div class="brand-wrapper"> 
+
+            <img src="/img/logo.png" alt="logo" class="logo">
+
+          </div>
+          <div class="login-wrapper my-auto">
+
+            <h1 class="login-title">Sign in</h1>
+
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+
+              <!-- Email -->
+              <div class="form-group mb-8">
+
+                <label for="email">Email</label>
+
+                <input type="email" 
+                        name="email" id="email" 
+                        :value="__('Email')" class="form-control" required autofocus
+                        placeholder="Enter your email address...">
 
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
-            </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
+              </div>
 
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" placeholder="Enter your password..." />
+              <!-- Password -->
+              <div class="form-group mb-10">
+
+                <label for="password">Password</label>
+
+                <input type="password"
+                        name="password"
+                        id="password" class="form-control" 
+                        :value="__('Password')" required autocomplete="current-password"
+                        placeholder="Enter your password...">
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
-            </div>
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+              </div>
 
-            @if (Route::has('password.request'))
-                    <div class="w-auto">
-                        <a class="text-sm font-extrabold text-indigo-600 hover:text-indigo-700" href="{{ route('password.request') }}">
-                            {{ __('Forgot your password?') }}
-                        </a>
-                        @endif
-                    </div>
+              <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="{{ __('Sign In') }}">
 
-            <div class="flex items-center justify-end mt-4">
-                 <x-primary-button>
-                     {{ __('Log in') }}
-                 </x-primary-button>
-            </div>
+            </form>
 
-            <div class="w-auto p-5 ml-auto">
-                <a class="text-sm font-extrabold text-black-600 hover:text-indigo-700 font-medium flex items-center justify-center" href="{{ route('register') }}">{{ __('Create an Account') }}</a>
-            </div>
+            <div class="w-auto p-1 ml-auto">
 
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+            <a class="text-md font-extrabold text-black-600 font-medium flex items-center justify-center hover:no-underline"  href="{{ route('register') }}">{{ __('Create an Account') }}</a>
+
+           </div>
+          </div>
+        </div>
+
+        <!-- Image Login -->
+        <div class="col-sm-7 px-0 d-none d-sm-block">
+
+          <img src="/img/banners/sign-in-bannner.jpg" alt="login image" class="login-img">
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+</body>
+</html>

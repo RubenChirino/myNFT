@@ -1,66 +1,123 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-            <!-- Name -->
-            <div>
-                <x-input-label for="name" :value="__('Name')" />
-                
-                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus placeholder="Enter your name..." />
+  <title>Laravel</title>
 
-                <x-input-error :messages="$errors->get('name')" class="mt-2" />
-            </div>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
 
-            <!-- Email Address -->
-            <div class="mt-7">
-                <x-input-label for="email" :value="__('Email')" />
+</head>
 
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required  placeholder="Enter your email address..."/>
+<body>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-5 login-section-wrapper">
+          <div class="brand-wrapper"> 
+
+            <img src="/img/logo.png" alt="logo" class="logo">
+
+          </div>
+          <div class="login-wrapper my-auto">
+
+            <h1 class="login-title">Sign Up</h1>
+
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
+
+              <!-- Name -->
+                <div class="form-group mb-8">
+
+                    <label for="name">Name</label>
+
+                    <input type="text" 
+                            name="name" id="name" 
+                            :value="__('Name')" class="form-control" required autofocus
+                            placeholder="Enter your name...">
+
+                    <x-input-error :messages="$errors->get('name')" class="mt-2" />
+
+                </div>
+
+              <!-- Email -->
+              <div class="form-group mb-8">
+
+                <label for="email">Email</label>
+
+                <input type="email" 
+                        name="email" id="email" 
+                        :value="__('Email')" class="form-control" required autofocus
+                        placeholder="Enter your email address...">
 
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
-            </div>
 
-            <!-- Password -->
-            <div class="mt-7">
-                <x-input-label for="password" :value="__('Password')" />
+              </div>
 
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" placeholder="Enter your password..."/>
+              <!-- Password -->
+              <div class="form-group mb-8">
+
+                <label for="password">Password</label>
+
+                <input type="password"
+                        name="password"
+                        id="password" class="form-control" 
+                        :value="__('Password')" required autocomplete="current-password"
+                        placeholder="Enter your password...">
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="form-group mb-10">
+
+                <label for="password_confirmation">Repeat Password</label>
+
+                <input type="password"
+                        name="password_confirmation" 
+                        id="password_confirmation" class="form-control"          
+                        :value="__('Repeat Password')" requiered autocomplete="current-password"   
+                        placeholder="Repeat Password...">
+
+                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+
+              </div>
+
+              <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="{{ __('Sign Up') }}">
+
+            </form>
+
+            <div class="w-auto p-2">
+                <span class="text-md text-black font-extrabold text-black-600"> {{ __('Already registered?') }}</span>
+                <a class="text-md text-black font-extrabold text-indigo-500 hover:text-blue-700 font-medium hover:no-underline" href="{{ route('login') }}">{{ __('Login') }}</a>
             </div>
 
-            <!-- Confirm Password -->
-            <div class="mt-7">
-                <x-input-label for="password_confirmation" :value="__('Repeat Password')" />
+          </div>
+        </div>
 
-                <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required placeholder="Repeat Password..." />
+        <!-- Image Register -->
+        <div class="col-sm-7 px-0 d-none d-sm-block">
+          <img src="/img/banners/sign-up-bannner.png" alt="register image" class="login-img">
+            <div class="centered">A highly-curated platform for creating, collecting and trading unique NFTs</div>
+            <div class="fra-1">Purchase cool NFTs very easy fast</div>
+            <div class="fra-2">A digital gallery to showcase your collection</div>
+        </div>
 
-                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-            </div>
-    
-            <div class="flex items-center justify-end mt-9">
-                <x-primary-button>
-                    {{ __('Sign Up') }}
-                </x-primary-button>
-            </div>
-            
-             <div class="w-auto p-2">
-                <span class="text-sm text-black font-extrabold text-indigo-600"> {{ __('Already registered?') }}</span>
-                <a class="text-sm text-black font-extrabold text-indigo-500 hover:text-blue-700 font-medium" href="{{ route('login') }}">{{ __('Login') }}</a>
-            </div>
+      </div>
+    </div>
+  </main>
 
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+</body>
+</html>
