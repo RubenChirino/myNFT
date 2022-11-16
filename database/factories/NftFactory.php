@@ -18,10 +18,10 @@ class NftFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $title = $this->faker->sentence(),
+            'name' => $name = $this->faker->sentence(15),
             'uuid' => $this->faker->uuid(),
             'price' => $this->faker->randomNumber(4),
-            'url' => Str::slug($title),
+            'url' => Str::slug($name),
             'category' => $this->faker->randomElement($array = array ('common', 'rare', 'especial', 'exceptional', 'legendary'))
         ];
     }

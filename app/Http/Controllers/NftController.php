@@ -39,14 +39,14 @@ class NftController extends Controller
     public function store(Request $request) {
 
         $request->validate([
-            'title' => 'required',
+            'name' => 'required',
             'price' =>  'required',
             'url' =>  'unique:nfts,url', // required|
             'category' => 'required',
         ]);
 
         $nft = $request->user()->nfts()->create([
-            'title' => $title = $request->title,
+            'name' => $name = $request->name,
             'price' =>  $request->price,
             'url' => Str::slug($request->url),
             'category' => $request->category,
@@ -60,14 +60,14 @@ class NftController extends Controller
     public function update(Request $request, Nft $nft) {
 
         $request->validate([
-            'title' => 'required',
+            'name' => 'required',
             'price' =>  'required',
             'url' =>  'unique:nfts,url,' . $nft->id, // required|
             'category' => 'required',
         ]);
 
         $nft->update([
-            'title' => $request->title,
+            'name' => $request->name,
             'price' =>  $request->price,
             'url' => Str::slug($request->url),
             'category' => $request->category,

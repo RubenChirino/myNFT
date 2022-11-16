@@ -31,7 +31,7 @@ class PagesController extends Controller
     */
     public function gallery(Request $request) {
         // $search = $request->search;
-        // $nfts = Nft::where('title', 'LIKE', "%{$search}%")->latest()->paginate();
+        // $nfts = Nft::where('name', 'LIKE', "%{$search}%")->latest()->paginate();
         $agent = new \Jenssegers\Agent\Agent;
         $items = ($agent->isMobile()) ? 4 : 10;
         $nfts = Nft::latest()->paginate($items); // Nft::get()

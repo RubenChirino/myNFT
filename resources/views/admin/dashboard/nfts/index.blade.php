@@ -15,7 +15,7 @@
                     <table class="mb-4">
                         @foreach ($nfts as $nft)
                         <tr class="border-b border-gray-200 text-sm">
-                            <td class="px-6 py-4">{{ $nft->title }}</td>
+                            <td class="px-6 py-4">{{ $nft->name }}</td>
                             <td class="px-6 py-4">
                                 <a href="{{ route('nfts.edit', $nft) }}" class="text-indigo-600">Editar</a>
                             </td>
@@ -57,7 +57,7 @@
                     <table class="mb-4">
                         @foreach ($nfts as $nft)
                         <tr class="border-b border-gray-200 text-sm">
-                            <td class="px-6 py-4">{{ $nft->title }}</td>
+                            <td class="px-6 py-4">{{ $nft->name }}</td>
                             <td class="px-6 py-4">
                                 <a href="" class="text-indigo-600">Editar</a>
                             </td>
