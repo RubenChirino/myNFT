@@ -6,28 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Laravel</title>
+  <title>myNFT - Sign Up</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/styles.css">
 
 </head>
 
 <body>
   <main>
+
+    @vite(['resources/css/views/register.css'])
+
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-5 login-section-wrapper">
-          <div class="brand-wrapper"> 
+        <div class="col-sm-5 register-section-wrapper">
+          <div class="brand-wrapper">
 
             <img src="/img/logo.png" alt="logo" class="logo">
 
           </div>
-          <div class="login-wrapper my-auto">
+          <div class="register-wrapper my-auto">
 
-            <h1 class="login-title">Sign Up</h1>
+            <h1 class="register-title">Sign Up</h1>
 
             <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -37,8 +38,8 @@
 
                     <label for="name">Name</label>
 
-                    <input type="text" 
-                            name="name" id="name" 
+                    <input type="text"
+                            name="name" id="name"
                             :value="__('Name')" class="form-control" required autofocus
                             placeholder="Enter your name...">
 
@@ -51,8 +52,8 @@
 
                 <label for="email">Email</label>
 
-                <input type="email" 
-                        name="email" id="email" 
+                <input type="email"
+                        name="email" id="email"
                         :value="__('Email')" class="form-control" required autofocus
                         placeholder="Enter your email address...">
 
@@ -67,7 +68,7 @@
 
                 <input type="password"
                         name="password"
-                        id="password" class="form-control" 
+                        id="password" class="form-control"
                         :value="__('Password')" required autocomplete="current-password"
                         placeholder="Enter your password...">
 
@@ -81,22 +82,22 @@
                 <label for="password_confirmation">Repeat Password</label>
 
                 <input type="password"
-                        name="password_confirmation" 
-                        id="password_confirmation" class="form-control"          
-                        :value="__('Repeat Password')" requiered autocomplete="current-password"   
+                        name="password_confirmation"
+                        id="password_confirmation" class="form-control"
+                        :value="__('Repeat Password')" requiered autocomplete="current-password"
                         placeholder="Repeat Password...">
 
                  <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
 
               </div>
 
-              <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="{{ __('Sign Up') }}">
+              <input class="btn btn-block bg-blue-600 hover:bg-blue-700 register-btn" name="register" id="register" type="submit" value="{{ __('Sign Up') }}">
 
             </form>
 
             <div class="w-auto p-2">
                 <span class="text-md text-black font-extrabold text-black-600"> {{ __('Already registered?') }}</span>
-                <a class="text-md text-black font-extrabold text-indigo-500 hover:text-blue-700 font-medium hover:no-underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="text-md font-extrabold text-indigo-500 hover:text-blue-700 hover:no-underline" href="{{ route('login') }}">{{ __('Login') }}</a>
             </div>
 
           </div>
@@ -104,7 +105,7 @@
 
         <!-- Image Register -->
         <div class="col-sm-7 px-0 d-none d-sm-block">
-          <img src="/img/banners/sign-up-bannner.png" alt="register image" class="login-img">
+          <img src="/img/banners/sign-up-bannner.png" alt="register image" class="register-img">
             <div class="centered">A highly-curated platform for creating, collecting and trading unique NFTs</div>
             <div class="fra-1">Purchase cool NFTs very easy fast</div>
             <div class="fra-2">A digital gallery to showcase your collection</div>

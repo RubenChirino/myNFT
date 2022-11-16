@@ -1,14 +1,14 @@
 @csrf
 
 <label class="flex flex-col gap-1.5">
-    Title
+    Name
     <input
     class="border-gray-200 rounded"
     type="text"
-    name="title"
-    id="title"
-    value="{{ old('title', $nft->title) }}">
-    <span>@error('title') {{ $message }} @enderror</span>
+    name="name"
+    id="name"
+    value="{{ old('name', $nft->name) }}">
+    <span>@error('name') {{ $message }} @enderror</span>
 </label>
 
 <label class="flex flex-col my-6 gap-1.5">
@@ -29,6 +29,3 @@
     </div>
     <span>@error('image') {{ $message }} @enderror</span>
 </label>
-
-<input class="mt-7 rounded text-white bg-blue-600 p-2" type="submit"
-value="{{ ($nft->id) ? ('Edit') : ('Add') }}">

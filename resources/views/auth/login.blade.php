@@ -6,78 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <title>Laravel</title>
+  <title>myNFT - Sign In</title>
 
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/styles.css">
 
 </head>
 <body>
   <main>
+
+    @vite(['resources/css/views/login.css'])
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-5 login-section-wrapper">
-          <div class="brand-wrapper"> 
 
+          <div class="brand-wrapper">
             <img src="/img/logo.png" alt="logo" class="logo">
-
           </div>
+
           <div class="login-wrapper my-auto">
 
             <h1 class="login-title">Sign in</h1>
 
             <form method="POST" action="{{ route('login') }}">
-                @csrf
-
-              <!-- Email -->
-              <div class="form-group mb-8">
-
-                <label for="email">Email</label>
-
-                <input type="email" 
-                        name="email" id="email" 
-                        :value="__('Email')" class="form-control" required autofocus
-                        placeholder="Enter your email address...">
-
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
-
-              </div>
-
-              <!-- Password -->
-              <div class="form-group mb-10">
-
-                <label for="password">Password</label>
-
-                <input type="password"
-                        name="password"
-                        id="password" class="form-control" 
-                        :value="__('Password')" required autocomplete="current-password"
-                        placeholder="Enter your password...">
-
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-
-              </div>
-
-              <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="{{ __('Sign In') }}">
-
+                @include('auth._form')
+                <input class="btn btn-block bg-blue-600 hover:bg-blue-700 login-btn" name="login" id="login" type="submit" value="{{ __('Sign In') }}">
             </form>
 
             <div class="w-auto p-1 ml-auto">
+                <a class="text-md font-extrabold text-black-600 flex items-center justify-center hover:no-underline"  href="{{ route('register') }}">{{ __('Create an Account') }}</a>
+            </div>
 
-            <a class="text-md font-extrabold text-black-600 font-medium flex items-center justify-center hover:no-underline"  href="{{ route('register') }}">{{ __('Create an Account') }}</a>
-
-           </div>
           </div>
         </div>
 
         <!-- Image Login -->
         <div class="col-sm-7 px-0 d-none d-sm-block">
-
           <img src="/img/banners/sign-in-bannner.jpg" alt="login image" class="login-img">
-
         </div>
+
       </div>
     </div>
   </main>

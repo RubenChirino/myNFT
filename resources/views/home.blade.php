@@ -1,9 +1,14 @@
 <x-app-layout>
-    <link rel="stylesheet" href="/css/home.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+
     <!-- Scripts -->
     {{-- @vite(['resources/css/views/auth/dashboard/nfts/add.css']) --}}
+   
 
   <div class="py-12">
+
+  @vite(['resources/css/views/home.css'])
 
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
 
