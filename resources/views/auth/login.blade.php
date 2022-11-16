@@ -36,7 +36,7 @@
             </form>
 
             <div class="w-auto p-1 ml-auto">
-                <a class="text-md font-extrabold text-black-600 font-medium flex items-center justify-center hover:no-underline"  href="{{ route('register') }}">{{ __('Create an Account') }}</a>
+                <a class="text-md font-extrabold text-black-600 flex items-center justify-center hover:no-underline"  href="{{ route('register') }}">{{ __('Create an Account') }}</a>
             </div>
 
           </div>
