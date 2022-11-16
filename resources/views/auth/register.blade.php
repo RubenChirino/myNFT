@@ -97,7 +97,7 @@
 
             <div class="w-auto p-2">
                 <span class="text-md text-black font-extrabold text-black-600"> {{ __('Already registered?') }}</span>
-                <a class="text-md text-black font-extrabold text-indigo-500 hover:text-blue-700 font-medium hover:no-underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="text-md font-extrabold text-indigo-500 hover:text-blue-700 hover:no-underline" href="{{ route('login') }}">{{ __('Login') }}</a>
             </div>
 
           </div>
