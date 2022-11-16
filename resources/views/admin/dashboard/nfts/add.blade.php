@@ -14,6 +14,7 @@
             action="{{ route('nfts.store') }}"
             method="POST">
                 @include('admin.dashboard.nfts._form')
+                <input class="mt-7 font-extrabold rounded text-white bg-blue-600 p-2" type="submit" value="Add">
             </form>
 
         </div>

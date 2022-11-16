@@ -21,6 +21,7 @@
           method="POST">
             @method('PUT')
             @include('admin.dashboard.nfts._form')
+            <input class="mt-7 font-extrabold rounded text-white bg-blue-600 p-2" type="submit" value="Edit">
           </form>
 
       </div>

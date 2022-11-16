@@ -29,6 +29,3 @@
     </div>
     <span>@error('image') {{ $message }} @enderror</span>
 </label>
-
-<input class="mt-7 rounded text-white bg-blue-600 p-2" type="submit"
-value="{{ ($nft->id) ? ('Edit') : ('Add') }}">
