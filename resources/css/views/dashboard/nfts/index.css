@@ -9,37 +9,29 @@
     font-size: 38px;
     line-height: 46px;
     /* font-family: 'Inter'; */
+    margin-bottom: 1.5rem;
 }
 
-.admin-nfts-page .nfts-container {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fit, 1fr);
-    grid-column-gap: 1rem;
-    grid-row-gap: 1.7rem;
-    margin-top: 3rem;
+.table-container {
+    padding: 0;
+}
+
+.table-container table {
+    text-align: center;
+}
+
+.table-container table #nft-actions_column {
+    display: flex;
+    justify-content: space-around;
 }
 
 .admin-nfts-page .pagination-container {
-    margin-top: 2rem;
+    margin: 1rem;
 }
 
 /* Small devices */
 @media screen and (max-width: 768px) {
     .nfts-container {
         grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-    }
-}
-
-/* Nft Component */
-
-.nft-card {
-    width: 200px;
-}
-
-@media screen and (max-width: 768px) {
-    .nft-card {
-        width: 145px;
     }
 }
