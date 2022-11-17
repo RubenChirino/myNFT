@@ -1,14 +1,20 @@
 <x-app-layout>
 
-    <!-- Scripts -->
-    {{-- @vite(['resources/css/views/auth/dashboard/nfts/add.css']) --}}
+    <x-bootstrap-css />
 
   <div class="py-12">
 
-    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+    <div>
+        <form class="flex flex-col" method="POST" action="{{ route('login') }}">
+            @include('auth._form')
+            <input class="btn btn-block bg-blue-600 hover:bg-blue-700 login-btn" name="login" id="login" type="submit" value="{{ __('Edit') }}">
+        </form>
+        <a>Go to the admin tools</a>
+    </div>
 
-        CONTENT
-
+    <div>
+        Shippings table
+        {{-- <table>...</table> --}}
     </div>
 
   </div>
