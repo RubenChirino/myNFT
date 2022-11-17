@@ -24,51 +24,50 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden shadow-md"> {{-- sm:hidden --}}
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link class="flex items-center gap-2" :href="route('home')" :active="request()->routeIs('home')">
+            <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('home')" :active="request()->routeIs('home')">
                 <img class="inline-flex" src="{{ asset('/img/icons/home.png') }}" alt="">
                 {{ __('Home') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link class="flex items-center gap-2" :href="route('gallery')" :active="request()->routeIs('gallery')">
+            <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('gallery')" :active="request()->routeIs('gallery')">
                 <img class="inline-flex" src="{{ asset('/img/icons/portrait-frame.png') }}" alt="">
                 {{ __('Gallery') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link class="flex items-center gap-2" :href="route('cart')" :active="request()->routeIs('cart')">
+            <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('cart')" :active="request()->routeIs('cart')">
                 <img class="inline-flex" src="{{ asset('/img/icons/cart.png') }}" alt="">
                 {{ __('Shopping Cart') }}
             </x-responsive-nav-link>
 
-            {{-- <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            {{-- <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 <img class="inline-flex" src="{{ asset('/img/icons/logout.png') }}" alt="">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link> --}}
 
             @auth
-                <x-responsive-nav-link class="flex items-center gap-2" :href="route('account')" :active="request()->routeIs('account')">
+                <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('account')" :active="request()->routeIs('account')">
                     <img class="inline-flex" src="{{ asset('/img/icons/user.png') }}" alt="">
                     {{ __('Account') }}
                 </x-responsive-nav-link>
 
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                    <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
                         <img class="inline-flex" src="{{ asset('/img/icons/logout.png') }}" alt="">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
             @else
-                <x-responsive-nav-link class="flex items-center gap-2" :href="route('login')" :active="request()->routeIs('login')">
+                <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('login')" :active="request()->routeIs('login')">
                     <img class="inline-flex" src="{{ asset('/img/icons/user.png') }}" alt="">
                     {{ __('Login') }}
                 </x-responsive-nav-link>
 
-                <x-responsive-nav-link class="flex items-center gap-2" :href="route('register')" :active="request()->routeIs('register')">
+                <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('register')" :active="request()->routeIs('register')">
                     <img class="inline-flex" src="{{ asset('/img/icons/user.png') }}" alt="">
                     {{ __('Register') }}
                 </x-responsive-nav-link>
             @endauth
         </div>
-
     </div>
 </nav>
