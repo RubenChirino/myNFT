@@ -1,0 +1,45 @@
+.admin-nfts-page {
+    width: 80%;
+    margin: auto;
+}
+
+.admin-nfts-page .title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 46px;
+    /* font-family: 'Inter'; */
+}
+
+.admin-nfts-page .nfts-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1.7rem;
+    margin-top: 3rem;
+}
+
+.admin-nfts-page .pagination-container {
+    margin-top: 2rem;
+}
+
+/* Small devices */
+@media screen and (max-width: 768px) {
+    .nfts-container {
+        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    }
+}
+
+/* Nft Component */
+
+.nft-card {
+    width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+    .nft-card {
+        width: 145px;
+    }
+}

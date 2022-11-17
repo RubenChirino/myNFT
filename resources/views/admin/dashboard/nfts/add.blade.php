@@ -1,7 +1,7 @@
 <x-app-layout>
 
       <!-- Scripts -->
-      @vite(['resources/css/views/auth/dashboard/nfts/add.css'])
+      @vite(['resources/css/views/dashboard/nfts/add.css'])
 
     <div class="py-12">
 

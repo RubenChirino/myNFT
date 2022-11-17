@@ -7,7 +7,7 @@
     </x-slot> --}}
 
     <!-- Scripts -->
-    @vite(['resources/css/views/auth/dashboard/nfts/edit.css'])
+    @vite(['resources/css/views/dashboard/nfts/edit.css'])
 
   <div class="py-12">
 
