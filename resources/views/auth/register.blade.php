@@ -9,13 +9,14 @@
   <title>myNFT - Sign Up</title>
 
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
 </head>
 
 <body>
   <main>
 
+    {{-- CSS Styles --}}
+    <x-bootstrap-css />
     @vite(['resources/css/views/register.css'])
 
     <div class="container-fluid">
