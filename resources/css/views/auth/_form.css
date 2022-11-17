@@ -1,0 +1,35 @@
+
+.form-group label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.form-control {
+    border-color: #b0adad;
+    border-radius: 10px;
+    padding: 9px 1rem;
+    min-height: 50px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #b0adad;
+}
+
+.form-control::-moz-placeholder {
+    color: #0a0a0a;
+}
+
+.form-control:-ms-input-placeholder {
+    color: #0a0a0a;
+}
+
+.form-control::-ms-input-placeholder {
+    color: #0a0a0a;
+}
+
+.form-control::placeholder {
+    color: #b0adad;
+}

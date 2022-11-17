@@ -1,5 +1,8 @@
 @csrf
 
+<!-- Styles -->
+@vite(['resources/css/views/auth/_form.css'])
+
 <!-- Email -->
 <div class="form-group mb-8">
 
