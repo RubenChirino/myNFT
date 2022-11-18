@@ -17,8 +17,8 @@ body {
     font-size: 43px;
     position: absolute;
     top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%)
+    left: 60%;
+    transform: translate(-10%, -50%)
 }
 
 .register-section-wrapper {
@@ -68,10 +68,9 @@ body {
 }
 
 .register-wrapper .form-control {
-    /*border: 10px; /*#838383;*/
     border-color: #b0adad;
     border-radius: 10px;
-    padding: 9px 1rem;
+    padding: 9px 1rem; 
     min-height: 50px;
     font-size: 18px;
     font-weight: normal;
@@ -98,12 +97,13 @@ body {
 }
 
 .register-wrapper .register-btn {
-    padding: 8px 20px;
+    padding: 8px 20px; 
     border-radius: 10px;
     font-size: 16px;
     font-weight: bold;
     color: rgb(255, 255, 255);
     margin-bottom: 15px;
+    width: 100%;
 }
 
 .register-wrapper .register-btn:hover {
@@ -131,8 +131,8 @@ body {
     font-size: 20px;
     position: absolute;
     top: 50%;
-    left: 39%;
-    transform: translate(-50%, -50%)
+    left: 60%;
+    transform: translate(-27%, -50%)
 }
 
 .fra-2 {
@@ -140,6 +140,6 @@ body {
     font-size: 20px;
     position: absolute;
     top: 60%;
-    left: 43%;
-    transform: translate(-50%, -50%)
+    left: 60%;
+    transform: translate(-20%, -50%)
 }
