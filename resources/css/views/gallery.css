@@ -1,6 +1,6 @@
 .gallery-page {
     width: 80%;
-    margin: auto;
+    margin: 3rem auto 4rem auto;
 }
 
 .gallery-page .title {
@@ -27,6 +27,11 @@
 
 /* Small devices */
 @media screen and (max-width: 768px) {
+    .gallery-page {
+        width: 90%;
+        margin: 2rem auto 3.5rem auto;
+    }
+
     .nfts-container {
         grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
     }

@@ -1,17 +1,9 @@
-{{-- @extends('layouts.app')
-
-@section('content')
-
-@endsection --}}
-
-
-
 <x-app-layout>
 
-    <!-- Scripts -->
+    <!-- Styles -->
     @vite(['resources/css/views/gallery.css'])
 
-  <div class="gallery-page py-9">
+  <div class="gallery-page">
 
     <h1 class="title">Gallery</h1>
 
