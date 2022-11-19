@@ -20,7 +20,7 @@
             <div class="author mb-1 text-center font-extrabold">Mark Zuckerberg, CEO of Meta</div>
         </div>
 
-        <div class="grid grid-cols-2 gap-x-10 flex items-center">
+        <div class="grid grid-cols-2 gap-x-10 items-center">
 
             <div class="mb-4 m-10 ml-auto">
                 <a href="https://blockchain.capital" target="_blank">
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 gap-4 flex items-center">
+        <div class="grid grid-cols-1 gap-4 items-center">
 
             <div class="mr-auto ml-auto w-68">
                 <a href="https://www.binance.com" target="_blank">
