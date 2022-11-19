@@ -1,13 +1,7 @@
 <x-app-layout>
 
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Nfts') }}
-        </h2>
-    </x-slot> --}}
-
-    <!-- Scripts -->
-    @vite(['resources/css/views/dashboard/nfts/edit.css'])
+  <!-- Styles -->
+  @vite(['resources/css/views/dashboard/nfts/edit.css'])
 
   <div class="py-12">
 
@@ -21,7 +15,7 @@
           method="POST">
             @method('PUT')
             @include('admin.dashboard.nfts._form')
-            <input class="mt-7 font-extrabold rounded text-white bg-blue-600 p-2" type="submit" value="Edit">
+            <input class="cursor-pointer mt-7 font-extrabold rounded text-white bg-blue-600 p-2" type="submit" value="Edit">
           </form>
 
       </div>

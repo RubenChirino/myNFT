@@ -1,7 +1,7 @@
 <x-app-layout>
 
-      <!-- Scripts -->
-      @vite(['resources/css/views/dashboard/nfts/add.css'])
+    <!-- Styles -->
+    @vite(['resources/css/views/dashboard/nfts/add.css'])
 
     <div class="py-12">
 
@@ -14,7 +14,7 @@
             action="{{ route('nfts.store') }}"
             method="POST">
                 @include('admin.dashboard.nfts._form')
-                <input class="mt-7 font-extrabold rounded text-white bg-blue-600 p-2" type="submit" value="Add">
+                <input class="cursor-pointer mt-7 font-extrabold rounded text-white bg-blue-600 p-2" type="submit" value="Add">
             </form>
 
         </div>
