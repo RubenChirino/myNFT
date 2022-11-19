@@ -1,6 +1,14 @@
+.invisible {
+    position: absolute;
+    height: 0;
+    width: 0;
+}
+
 .admin-nfts-page {
     width: 80%;
     margin: auto;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
 }
 
 .admin-nfts-page .title {
@@ -25,13 +33,60 @@
     justify-content: space-around;
 }
 
+#edit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#delete-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#delete-btn label, #delete-btn input {
+    cursor: pointer;
+}
+
+.admin-nfts-page .add-nft-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 1.5rem;
+}
+
+#add-btn {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.20rem 2.5rem;
+}
+
 .admin-nfts-page .pagination-container {
-    margin: 1rem;
+    margin: 1rem 1.5rem;
 }
 
 /* Small devices */
 @media screen and (max-width: 768px) {
-    .nfts-container {
-        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+
+    .admin-nfts-page {
+        width: 90%;
+        margin: auto;
+        padding-top: 2rem;
+        padding-bottom: 4.5rem;
     }
+
+    .admin-nfts-page .title {
+        font-size: 28px;
+    }
+
+    #add-btn {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 0.20rem 1.5rem;
+    }
+
 }

@@ -1,17 +1,10 @@
 <x-app-layout>
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Nfts') }}
-        </h2>
-
-        <a href="{{ route('nfts.create') }}">Crear</a>
-    </x-slot> --}}
 
     <!-- Styles -->
     <x-bootstrap-css />
     @vite(['resources/css/views/dashboard/nfts/index.css'])
 
-    <div class="admin-nfts-page py-12">
+    <div class="admin-nfts-page pt-12 pb-24">
 
         <h1 class="title">Admin Dashboard</h1>
 
@@ -34,22 +27,33 @@
                     </td>
                     <td id="nft-price_column" class="px-6 py-2">{{ $nft->price }}</td>
                     <td id="nft-actions_column" class="px-6 py-2">
-                        <a href="{{ route('nfts.edit', $nft) }}" class="text-indigo-600">Editar</a>
+                        <a id="edit-btn" href="{{ route('nfts.edit', $nft) }}" class="bg-blue-600 rounded p-2">
+                            <img src="{{ asset('/img/icons/pencil.png') }}" alt="...">
+                        </a>
 
-                        <form action="{{ route('nfts.destroy', $nft) }}" method="POST">
+                        <form id="delete-btn" action="{{ route('nfts.destroy', $nft) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input
-                            class="bg-gray-800 text-white rounded px-4 py-2"
-                            type="submit"
-                            value="Eliminar"
-                            onclick="return confirm('Do you want to eliminate it?')">
+                            <label class="bg-red-500 rounded p-2">
+                                <input
+                                class="invisible"
+                                type="submit"
+                                value=""
+                                onclick="return confirm('Do you want to eliminate it?')">
+                                <img src="{{ asset('/img/icons/trash.png') }}" alt="...">
+                            </label>
                         </form>
                     </td>
                 </tr>
                 @endforeach
                 </tbody>
             </table>
+
+            <div class="add-nft-container">
+                <a id="add-btn" class="bg-green-700 rounded" href="{{ route('nfts.create') }}">
+                    Add
+                </a>
+            </div>
 
             <div class="pagination-container">
                 {{ $nfts->links() }}
@@ -59,33 +63,3 @@
     </div>
 
 </x-app-layout>
-
-
-{{-- {{ asset('images/logo.png') }} --}}
-
-{{-- Search --}}
-{{-- {{ request('search') }} --}}
-
-{{-- <div class="py-12 ruben">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-
-                    <table class="mb-4">
-                        @foreach ($nfts as $nft)
-                        <tr class="border-b border-gray-200 text-sm">
-                            <td class="px-6 py-2">{{ $nft->name }}</td>
-                            <td class="px-6 py-2">
-                                <a href="" class="text-indigo-600">Editar</a>
-                            </td>
-                            <td class="px-6 py-2">Eliminar</td>
-                        </tr>
-                        @endforeach
-                    </table>
-
-                    {{ $nfts->links() }}
-
-                </div>
-            </div>
-        </div>
-    </div> --}}
