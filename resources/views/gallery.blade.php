@@ -53,6 +53,7 @@
         // Verify
         if (!cart[item.id]) {
             cart[item.id] = {
+                id: item.id,
                 name: item.name,
                 price: item.price,
                 category: item.category,
