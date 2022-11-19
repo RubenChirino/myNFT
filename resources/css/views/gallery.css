@@ -21,6 +21,21 @@
     margin-top: 3rem;
 }
 
+.gallery-page .nft-card #row-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery-page .nft-card #row-1 .card-title {
+    width: 80%;
+}
+
+.gallery-page .nft-card #row-1 .card-add-to-cart-btn {
+    display: flex;
+    justify-content: flex-end;
+    width: 20%;
+}
+
 .gallery-page .pagination-container {
     margin-top: 2rem;
 }
