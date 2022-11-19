@@ -1,3 +1,6 @@
+<!-- Styles -->
+@vite(['resources/css/views/layouts/navigation.css'])
+
 <nav x-data="{ open: false }" class="bg-white">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +15,7 @@
             </div>
 
             <!-- Hamburger -->
-            <div class="-mr-2 flex items-center"> {{-- sm:hidden --}}
+            <div class="-mr-2 flex items-center">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <img :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" src="{{ asset('/img/hamburguer-menu.png') }}" alt="">
                     <img :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" src="{{ asset('/img/close.png') }}" alt="">
@@ -22,7 +25,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden shadow-md"> {{-- sm:hidden --}}
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden shadow-md">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('home')" :active="request()->routeIs('home')">
                 <img class="inline-flex" src="{{ asset('/img/icons/home.png') }}" alt="">
@@ -37,12 +40,8 @@
             <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('cart')" :active="request()->routeIs('cart')">
                 <img class="inline-flex" src="{{ asset('/img/icons/cart.png') }}" alt="">
                 {{ __('Shopping Cart') }}
+                <span id="cart-items" class="bg-blue-600 text-white"></span>
             </x-responsive-nav-link>
-
-            {{-- <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                <img class="inline-flex" src="{{ asset('/img/icons/logout.png') }}" alt="">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link> --}}
 
             @auth
                 <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('account')" :active="request()->routeIs('account')">
@@ -70,4 +69,15 @@
             @endauth
         </div>
     </div>
+
+    <script>
+        const numberOfItemsInCart = Object.keys(JSON.parse(window.localStorage.getItem("cart") ?? {})).length;
+        setNumberOfItemsInCart(numberOfItemsInCart);
+
+        function setNumberOfItemsInCart(number) {
+            const elem = document.querySelector("#cart-items");
+            elem.textContent = number;
+        }
+    </script>
+
 </nav>
