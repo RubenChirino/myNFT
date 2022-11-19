@@ -71,10 +71,10 @@
     </div>
 
     <script>
-        const numberOfItemsInCart = Object.keys(JSON.parse(window.localStorage.getItem("cart") ?? {})).length;
-        setNumberOfItemsInCart(numberOfItemsInCart);
+        const totalItemsInCart = Object.keys(JSON.parse(window.localStorage.getItem("cart") ?? {})).length;
+        setTotalItemsInCart(totalItemsInCart);
 
-        function setNumberOfItemsInCart(number) {
+        function setTotalItemsInCart(number) {
             const elem = document.querySelector("#cart-items");
             elem.textContent = number;
         }
