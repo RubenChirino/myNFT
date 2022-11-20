@@ -133,13 +133,26 @@
     function updateData() {
         const cart = getCart();
         const totalItems = (cart) ? (Object.keys(cart)).length : 0;
+
+        // Navegation Counter
+        const navegationCounter = document.querySelector("#cart-items-counter");
+
         if (totalItems) {
             // Section 2
             const totalItemsElem = document.querySelector("#total-item");
             const totalPriceElem = document.querySelector("#total-price");
 
+
+            if (navegationCounter) {
+                navegationCounter.textContent = totalItems;
+            }
+
             totalItemsElem.textContent = `${totalItems} NFTs`;
             totalPriceElem.textContent = `Total price: ${getTotalPrice()}`;
+        } else {
+            if (navegationCounter) {
+                navegationCounter.textContent = 0;
+            }
         }
     }
 

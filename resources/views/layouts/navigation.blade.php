@@ -40,7 +40,7 @@
             <x-responsive-nav-link class="flex items-center gap-2 no-underline hover:bg-blue-50 hover:border-blue-600" :href="route('cart')" :active="request()->routeIs('cart')">
                 <img class="inline-flex" src="{{ asset('/img/icons/cart.png') }}" alt="">
                 {{ __('Shopping Cart') }}
-                <span id="cart-items" class="bg-blue-600 text-white"></span>
+                <span id="cart-items-counter" class="bg-blue-600 text-white"></span>
             </x-responsive-nav-link>
 
             @auth
@@ -77,7 +77,7 @@
         setTotalItemsInCart(totalItemsInCart);
 
         function setTotalItemsInCart(number) {
-            const elem = document.querySelector("#cart-items");
+            const elem = document.querySelector("#cart-items-counter");
             elem.textContent = number;
         }
     </script>

@@ -50,7 +50,6 @@
         //     item: cart[item.id],
         // });
 
-
         // Verify
         if (!cart[item.id]) {
             cart[item.id] = {
@@ -62,6 +61,14 @@
             try {
                 window.localStorage.setItem("cart", JSON.stringify(cart));
                 removeAddToCartBtn(item.id);
+
+                // Navegation Counter
+                const navegationCounter = document.querySelector("#cart-items-counter");
+                if (navegationCounter) {
+                    const totalItems = (cart) ? (Object.keys(cart)).length : 0;
+                    navegationCounter.textContent = totalItems;
+                }
+
             } catch (error) {
                 console.error("An error has ocurred to add the new item to the cart", error);
             }
