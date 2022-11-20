@@ -71,7 +71,9 @@
     </div>
 
     <script>
-        const totalItemsInCart = Object.keys(JSON.parse(window.localStorage.getItem("cart") ?? {})).length;
+
+        const totalItemsInCart = (window.localStorage.getItem("cart")) ?
+            Object.keys(JSON.parse(window.localStorage.getItem("cart"))).length : 0;
         setTotalItemsInCart(totalItemsInCart);
 
         function setTotalItemsInCart(number) {

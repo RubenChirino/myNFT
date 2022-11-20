@@ -36,7 +36,8 @@
   </div>
 
   <script>
-    const cart = JSON.parse(window.localStorage.getItem("cart") ?? {});
+    const cart = (window.localStorage.getItem("cart")) ?
+        JSON.parse(window.localStorage.getItem("cart")) : {};
 
     function addToCart(item) {
         if (!item) {
@@ -78,10 +79,12 @@
         btn.remove();
     }
 
-    // Product added to the cart
-    for (const [key, value] of Object.entries(cart)) {
-        // console.log(`${key}: ${value}`);
-        removeAddToCartBtn(key);
+    // Remove the "Add to cart" btn fo the product added to the cart
+    if (cart) {
+        for (const [key, value] of Object.entries(cart)) {
+            // console.log(`${key}: ${value}`);
+            removeAddToCartBtn(key);
+        }
     }
 
   </script>
