@@ -21,6 +21,12 @@ class NftController extends Controller
         ]);
     }
 
+    public function show($nft) {
+        return view('admin.dashboard.nfts.index', [
+            'nfts' => Nft::latest()->paginate()
+        ]);
+    }
+
     /**
      * POST
      */
@@ -40,10 +46,11 @@ class NftController extends Controller
      */
     public function store(Request $request) {
 
-        
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
-            'price' => 'numeric|max:9999999',
+            // 'uuid' => 'required',
+            'price' => 'required|numeric|max:9999999',
             'image' => 'required|mimes:jpg,bmp,png',
             'category' => 'required',
         ]);
@@ -55,15 +62,16 @@ class NftController extends Controller
             ->withInput();
         }
 
-        $imagen_nombre = time() . $request->file('image')->getClientOriginalName();
+        $image_name = NftController::createImageName($request->file('image'));
 
-        $image = $request->file('image')->storeAs('nfts', $imagen_nombre, 'public'); 
+        $image = $request->file('image')->storeAs('nfts', $image_name, 'public');
 
          Nft::create([
             'name'=> $request->name,
+            'uuid' => Str::uuid(),
             'price' => $request->price,
+            'image' => $image,
             'category' => $request->category,
-            'image' => $image
         ]);
 
         return redirect()
@@ -76,10 +84,10 @@ class NftController extends Controller
      */
     public function update(Request $request, Nft $nft) {
 
-         $rules= [
+         $rules = [
             'name' => 'required|max:255',
-            'price' => 'numeric|max:9999999',
-            'category' => 'required',
+            'price' => 'required|numeric|max:9999999',
+            // 'category' => 'required',
         ];
 
       //  if ($request->files('image')) {
@@ -102,11 +110,11 @@ class NftController extends Controller
             ];
 
          if($request->file('image')){
-                
-                $imagen_nombre = time() . $request->file('image')->getClientOriginalName();
-                
-                $image = $request->file('image')->storeAs('nfts', $imagen_nombre, 'public');
-                
+
+                $image_name = NftController::createImageName($request->file('image'));
+
+                $image = $request->file('image')->storeAs('nfts', $image_name, 'public');
+
                 Storage::delete('public/' . $nft->image);
                 $data['image'] = $image;
         }
@@ -127,10 +135,11 @@ class NftController extends Controller
         return back();
     }
 
-    public function show($nft) {
-        return view('admin.dashboard.nfts.index', [
-            'nfts' => Nft::latest()->paginate()
-        ]);
+    /**
+     * Helpers
+     */
+    public function createImageName($image) {
+        return time() . '_' . $image->getClientOriginalName();
     }
 
 }
