@@ -28,6 +28,9 @@ Run this followed commands:
 # Install dependencies (only the first time)
 npm install
 
+# Create the Storage link
+php artisan storage:link
+
 # Run the local server at [localhost:8080](http://127.0.0.1:8000)
 php artisan serve
 
