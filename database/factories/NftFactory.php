@@ -21,7 +21,7 @@ class NftFactory extends Factory
             'name' => $name = $this->faker->sentence(15),
             'uuid' => $this->faker->uuid(),
             'price' => $this->faker->randomNumber(4),
-            'url' => Str::slug($name),
+            'image' => fake()->url(),
             'category' => $this->faker->randomElement($array = array ('common', 'rare', 'especial', 'exceptional', 'legendary'))
         ];
     }

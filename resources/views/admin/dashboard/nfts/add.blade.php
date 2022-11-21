@@ -12,9 +12,10 @@
             <form
             class="flex flex-col mx-auto py-8"
             action="{{ route('nfts.store') }}"
-            method="POST">
+            method="POST"
+            enctype="multipart/form-data">
                 @include('admin.dashboard.nfts._form')
-                <input class="cursor-pointer mt-7 font-extrabold rounded text-white bg-blue-600 p-2" type="submit" value="Add">
+                <input class="cursor-pointer mt-7 font-extrabold rounded text-white bg-blue-600 p-2" type="submit" value="Add"> 
             </form>
 
         </div>

@@ -12,7 +12,7 @@
         @foreach( $nfts as $nft )
             {{-- <x-nft-card :name={{ $nft->name }} :price={{ $nft->price }} /> --}}
             <div id="nft-{{ $nft->id }}-card" class="nft-card max-w-sm rounded-md overflow-hidden shadow-lg cursor-pointer">
-                <img class="card-img-top" src="{{ asset('/img/nfts/orochi-silver.png') }}" alt="...">
+                <img class="card-img-top" src="{{ asset('/storage/'.$nft->image) }}" alt="...">
                 <div class="px-3 py-2">
                     <div id="row-1">
                         <h5 class="card-title font-bold truncate">{{ $nft->name }}</h5>

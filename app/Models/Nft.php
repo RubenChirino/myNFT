@@ -9,12 +9,14 @@ class Nft extends Model
 {
     use HasFactory;
 
-    // protected $fillable = [
-    //     'name',
-    //     'price',
-    //     'url',
-    //     'category',
-    // ];
+     protected $fillable = [
+        'name',
+        'price',
+        'image',
+        'category',
+     ];
+
+    //Edit this
 
     // public function user()
     // {

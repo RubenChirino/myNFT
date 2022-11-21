@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('nfts', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid')->unique();
+            $table->string('uuid')->nullable();
             $table->string('name');
             $table->float('price');
-            $table->string('url');
-            $table->enum('category', array('common', 'rare', 'especial', 'exceptional', 'legendary'));
+            $table->text('image');
+            $table->enum('category', array('common', 'rare', 'especial', 'exceptional', 'legendary'))->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nft');
+        Schema::dropIfExists('nfts');
     }
 };

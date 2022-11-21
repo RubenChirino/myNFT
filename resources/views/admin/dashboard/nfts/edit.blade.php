@@ -12,7 +12,8 @@
           <form
           class="flex flex-col mx-auto py-8"
           action="{{ route('nfts.update', $nft) }}"
-          method="POST">
+          method="POST"
+          enctype="multipart/form-data">
             @method('PUT')
             @include('admin.dashboard.nfts._form')
             <input class="cursor-pointer mt-7 font-extrabold rounded text-white bg-blue-600 p-2" type="submit" value="Edit">

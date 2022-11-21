@@ -22,10 +22,22 @@
     <span>@error('price') {{ $message }} @enderror</span>
 </label>
 
-<label class="flex flex-col gap-1.5">
+<label class="flex flex-col my-6 gap-1.5">
+    Category
+    <input
+    class="border-gray-200 rounded"
+    type="text"
+    name="category"
+    id="category"
+    value="{{ old('category', $nft->category) }}">
+    <span>@error('category') {{ $message }} @enderror</span>
+</label>
+
+
+<label for="image" class="flex flex-col gap-1.5">
     Image
     <div class="border border-gray-200 rounded py-2 px-4">
-        <input class="text-xs" type="file" name="image" id="image" value="{{ old('image', $nft->image) }}">
+        <input class="text-xs" type="file" name="image" id="image" accept="image/*"> 
     </div>
     <span>@error('image') {{ $message }} @enderror</span>
 </label>
