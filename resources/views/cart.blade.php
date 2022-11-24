@@ -14,9 +14,19 @@
         <div class="cart-info bg-white overflow-hidden shadow rounded-lg">
             <h3 id="total-item" class="font-bold"></h3>
             <p id="total-price" class="font-bold"></p>
-            <button id="buy-btn" onclick="" class="bg-blue-600 text-white py-1 px-4 rounded font-bold">
-                Buy
-            </button>
+
+            @auth
+                <x-responsive-nav-link :href="route('login')"
+                class="bg-blue-600 text-white py-1 px-4 rounded font-bold no-underline">
+                    Buy
+                </x-responsive-nav-link>
+            @else
+                <form id="buy-items-form" action="{{ route('nfts.store') }}">
+                    <input id="buy-btn" type="submit" value="Buy"
+                    class="bg-blue-600 text-white py-1 px-4 rounded font-bold no-underline">
+                </form>
+            @endauth
+
         </div>
 
         <!-- Not Items in the cart -->
@@ -46,9 +56,6 @@
     // Section 3
     const noItemsInCartElem = document.querySelector(".cart-no-items");
 
-    // Buy Items Button
-    const buyBtn = document.querySelector("#buy-btn");
-
     // Formatter
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -58,11 +65,29 @@
     updateScreen();
     updateData();
 
-    buyBtn.onclick = () => {
-        console.log("Items to buy =>", {
-            items: cart,
+
+    /* === Form === */
+    const buyForm = document.querySelector("#buy-items-form");
+    const buyBtn = document.querySelector("#buy-btn");
+
+    // User ID
+    const userIDInput = document.createElement("input");
+    userIDInput.type = "hidden";
+    userIDInput.name = "user_id";
+    userIDInput.value = 2;
+
+    // Nft ID
+    const nftIDInput = document.createElement("input");
+    nftIDInput.type = "hidden";
+    nftIDInput.name = "nft_id";
+    nftIDInput.value = Object.keys(cart);
+
+    console.log("Items to buy =>", {
+            itemsIDs: Object.keys(cart),
+            items: cart
         });
-    };
+
+    buyForm.append(userIDInput, nftIDInput);
 
     function removeElements(elements) {
         elements.forEach(element => {
