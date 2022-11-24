@@ -14,7 +14,7 @@
         <div class="cart-info bg-white overflow-hidden shadow rounded-lg">
             <h3 id="total-item" class="font-bold"></h3>
             <p id="total-price" class="font-bold"></p>
-            <button class="bg-blue-600 text-white py-1 px-4 rounded font-bold">
+            <button id="buy-btn" onclick="" class="bg-blue-600 text-white py-1 px-4 rounded font-bold">
                 Buy
             </button>
         </div>
@@ -29,7 +29,6 @@
   </div>
 
   <script>
-
     const cart = (window.localStorage.getItem("cart")) ?
             JSON.parse(window.localStorage.getItem("cart")) : {};
     const totalItems = (cart) ? (Object.keys(cart)).length : 0;
@@ -47,6 +46,9 @@
     // Section 3
     const noItemsInCartElem = document.querySelector(".cart-no-items");
 
+    // Buy Items Button
+    const buyBtn = document.querySelector("#buy-btn");
+
     // Formatter
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -56,6 +58,11 @@
     updateScreen();
     updateData();
 
+    buyBtn.onclick = () => {
+        console.log("Items to buy =>", {
+            items: cart,
+        });
+    };
 
     function removeElements(elements) {
         elements.forEach(element => {
@@ -76,7 +83,7 @@
         const card = document.createElement("div");
         card.id = `nft-${nft.id}-card`;
         card.className = "nft-card max-w-sm rounded-md overflow-hidden shadow-lg cursor-pointer";
-        card.innerHTML = `<img class="card-img-top" src="{{ asset('/img/nfts/orochi-silver.png') }}" alt="...">
+        card.innerHTML = `<img class="card-img-top" src="${window.location.origin}/storage/${nft.image}" alt="...">
                 <div class="px-3 py-2">
                     <div id="row-1">
                         <h5 class="card-title font-bold truncate">${truncateString(nft.name, 10)}</h5>

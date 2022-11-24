@@ -55,6 +55,7 @@
             cart[item.id] = {
                 id: item.id,
                 name: item.name,
+                image: item.image,
                 price: item.price,
                 category: item.category,
             }
