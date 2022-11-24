@@ -10,7 +10,7 @@
     name="name"
     id="name"
     value="{{ old('name', $nft->name) }}">
-    <span>@error('name') {{ $message }} @enderror</span>
+    <span class="text-red-600">@error('name') {{ $message }} @enderror</span>
 </label>
 
 <!-- ## Price ## -->
@@ -23,7 +23,7 @@
     name="price"
     id="price"
     value="{{ old('price', $nft->price) }}">
-    <span>@error('price') {{ $message }} @enderror</span>
+    <span class="text-red-600">@error('price') {{ $message }} @enderror</span>
 </label>
 
 <!-- ## Category ## -->
@@ -72,7 +72,7 @@ $opt5 = (old('category', $nft->category) == 'legendary') ? 'selected' : '';
 
     value=""> --}}
     {{-- {{ old('category', $nft->category) }} --}}
-    <span>@error('category') {{ $message }} @enderror</span>
+    <span class="text-red-600">@error('category') {{ $message }} @enderror</span>
 </label>
 
 <!-- ## Image ## -->
@@ -82,5 +82,5 @@ $opt5 = (old('category', $nft->category) == 'legendary') ? 'selected' : '';
     <div class="border border-gray-200 rounded py-2 px-4">
         <input class="text-xs" type="file" name="image" id="image" accept="image/png, image/gif, image/jpeg">
     </div>
-    <span>@error('image') {{ $message }} @enderror</span>
+    <span class="text-red-600">@error('image') {{ $message }} @enderror</span>
 </label>
