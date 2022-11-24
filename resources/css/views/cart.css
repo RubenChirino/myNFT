@@ -46,6 +46,10 @@
     padding: 1.5rem;
 }
 
+#buy-btn {
+    width: 100%;
+}
+
 /* Small devices */
 @media screen and (max-width: 768px) {
     .cart-page {
