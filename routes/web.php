@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\NftController;
+use App\Http\Controllers\ShoppingController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(PagesController::class)->group(function () {
@@ -27,9 +28,12 @@ Route::controller(PagesController::class)->group(function () {
     Route::get('gallery', 'gallery')->name('gallery');
 
     /**
-    * Cart
+    * Cart (Shopping)
     */
-    Route::get('cart', 'cart')->name('cart');
+    Route::get('/cart', function () {
+        Route::resource('cart', ShoppingController::class);
+        return view('cart');
+    })->name('cart');
 
     /**
     * Account
@@ -41,7 +45,7 @@ Route::controller(PagesController::class)->group(function () {
      */
     Route::group(['middleware' => ['is_admin']], function(){
         Route::redirect('admin/dashboard', '/admin/dashboard/nfts')->name('nfts-dashboard');
-        Route::resource('admin/dashboard/nfts', NftController::class); // Or only NFT
+        Route::resource('admin/dashboard/nfts', NftController::class);
     });
 });
 
