@@ -25,7 +25,10 @@ Download:
 Run this followed commands:
 
 ```bash
-# Install dependencies (only the first time)
+# Install Composer dependencies (Create the vendor folder)
+composer install
+
+# Install Node dependencies (Create the node_modules folder)
 npm install
 
 # Create the Storage link
