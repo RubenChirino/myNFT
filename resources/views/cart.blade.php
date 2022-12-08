@@ -16,12 +16,12 @@
             <p id="total-price" class="font-bold"></p>
 
             @auth
-                <form id="buy-items-form" action="{{ route('cart.store') }}">
+                <form id="buy-items-form" action="{{ route('cart.store') }}"> 
                     <input id="buy-btn" type="submit" value="Buy"
                     class="bg-blue-600 text-white py-1 px-4 rounded font-bold no-underline">
                 </form>
             @else
-                <a href="{{ route('login') }}""
+                <a href="{{ route('login') }}"
                 class="bg-blue-600 text-white text-center py-1 px-4 rounded font-bold no-underline">
                     Buy
                 </a>

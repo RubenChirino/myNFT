@@ -15,8 +15,10 @@ class ShoppingController extends Controller
     public function store(Request $request) {
 
         $validator = Validator::make($request->all(), [
-            'user_id' => 'required',
-            'nft_id' => 'required',
+          //  'user_id' => 'required',
+          //  'nft_id' => 'required',
+          'id_users' => 'required',
+          'id_nfts' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -27,8 +29,10 @@ class ShoppingController extends Controller
         }
 
         Shopping::create([
-            'user_id'=> $request->user_id,
-            'nft_id' => $request->nft_id,
+        //    'user_id'=> $request->user_id,
+         //   'nft_id' => $request->nft_id,
+         'id_users' => $request->id_users,
+         'id_nfts' => $request->id_nfts,
         ]);
 
         return redirect()
