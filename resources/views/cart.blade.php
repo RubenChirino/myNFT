@@ -16,9 +16,10 @@
             <p id="total-price" class="font-bold"></p>
 
             @auth
-                <form id="buy-items-form" action="{{ route('cart.store') }}"> 
+                <form id="buy-items-form" action="{{ route('shoppings.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <input id="buy-btn" type="submit" value="Buy"
-                    class="bg-blue-600 text-white py-1 px-4 rounded font-bold no-underline">
+                        class="bg-blue-600 text-white py-1 px-4 rounded font-bold no-underline">
                 </form>
             @else
                 <a href="{{ route('login') }}"
@@ -65,7 +66,6 @@
     updateScreen();
     updateData();
 
-
     /* === Form === */
     const buyForm = document.querySelector("#buy-items-form");
 
@@ -80,16 +80,20 @@
         // User ID
         const userIDInput = document.createElement("input");
         userIDInput.type = "hidden";
-        userIDInput.name = "user_id";
+        userIDInput.name = "id_users";
         userIDInput.value = 2;
 
         // Nft ID
         const nftIDInput = document.createElement("input");
         nftIDInput.type = "hidden";
-        nftIDInput.name = "nft_id";
+        nftIDInput.name = "id_nfts";
         nftIDInput.value = Object.keys(cart);
 
         buyForm.append(userIDInput, nftIDInput);
+
+        buyForm.onclick = () => {
+            window.localStorage.removeItem('cart');
+        }
     }
 
     function removeElements(elements) {

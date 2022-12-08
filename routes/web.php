@@ -7,10 +7,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(PagesController::class)->group(function () {
 
-    // Route::group(['middleware' => ['language']], function(){
-
-    // });
-
     /**
     * Auth (Register / Login)
     */
@@ -31,7 +27,7 @@ Route::controller(PagesController::class)->group(function () {
     * Cart (Shopping)
     */
     Route::get('/cart', function () {
-        Route::resource('cart', ShoppingController::class);
+        Route::resource('shoppings', ShoppingController::class);
         return view('cart');
     })->name('cart');
 
@@ -46,6 +42,13 @@ Route::controller(PagesController::class)->group(function () {
     Route::group(['middleware' => ['is_admin']], function(){
         Route::redirect('admin/dashboard', '/admin/dashboard/nfts')->name('nfts-dashboard');
         Route::resource('admin/dashboard/nfts', NftController::class);
+    });
+
+    /**
+     * Shoppings
+     */
+    Route::group(['middleware' => ['auth']], function(){
+        Route::resource('shoppings', ShoppingController::class);
     });
 });
 

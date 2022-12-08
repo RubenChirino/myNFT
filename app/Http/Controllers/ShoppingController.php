@@ -3,20 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shopping;
+use App\Models\Nft;
 
 use Illuminate\Http\Request;
 
 class ShoppingController extends Controller
 {
-
     /**
      * SAVE
      */
     public function store(Request $request) {
 
-        $validator = Validator::make($request->all(), [
-          //  'user_id' => 'required',
-          //  'nft_id' => 'required',
+        // Remove the purchased Nfts
+        $nfts = explode(",", $request->id_nfts);
+        $i = 0;
+        while($i < count($nfts))
+        {
+            Nft::where('id', '=', $nfts[$i])->delete();
+            $i++;
+        }
+
+        // dd($request->all());
+
+        /* $validator = Validator::make($request->all(), [
           'id_users' => 'required',
           'id_nfts' => 'required',
         ]);
@@ -26,17 +35,15 @@ class ShoppingController extends Controller
             ->route('cart')
             ->withErrors($validator)
             ->withInput();
-        }
+        } */
 
-        Shopping::create([
-        //    'user_id'=> $request->user_id,
-         //   'nft_id' => $request->nft_id,
+        /* Shopping::create([
          'id_users' => $request->id_users,
-         'id_nfts' => $request->id_nfts,
-        ]);
+         'id_nfts' => 27, // $request->id_nfts
+        ]); */
 
         return redirect()
-        ->route('cart')
+        ->route('home')
         ->with('status', 'La compra se ha completado correctamente.');
     }
 

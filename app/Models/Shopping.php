@@ -10,8 +10,6 @@ class Shopping extends Model
     use HasFactory;
 
     protected $fillable = [
-       // 'user_id',
-       // 'nft_id',
        'id_users',
        'id_nfts',
     ];

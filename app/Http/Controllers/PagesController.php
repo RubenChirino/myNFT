@@ -57,7 +57,7 @@ class PagesController extends Controller
      */
     public function dashboard() {
         return view('dashboard');
-    } 
+    }
 
     public function dashboard_edit(Nft $nft) {
         return view('dashboard.edit', ['nft' => $nft]);
