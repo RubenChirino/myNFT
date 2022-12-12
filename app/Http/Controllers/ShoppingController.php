@@ -43,7 +43,7 @@ class ShoppingController extends Controller
         ]); */
 
         return redirect()
-        ->route('home')
+        ->route('purchase')
         ->with('status', 'La compra se ha completado correctamente.');
     }
 

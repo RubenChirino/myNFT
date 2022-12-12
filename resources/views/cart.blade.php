@@ -9,7 +9,7 @@
 
     <div class="content">
 
-        <div class="cart-items"></div>
+        <div class="cart-items"></div> 
 
         <div class="cart-info bg-white overflow-hidden shadow rounded-lg">
             <h3 id="total-item" class="font-bold"></h3>

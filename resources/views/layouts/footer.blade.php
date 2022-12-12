@@ -15,9 +15,9 @@
             <div class="community col-12 col-sm-6 col-lg-6 flex flex-col gap-2">
                 <h4 class="community-title font-bold text-white">Join the community</h4>
                 <div class="community-icons flex gap-3">
-                    <img src="{{ asset('/img/icons/twitter.png') }}" alt="">
-                    <img src="{{ asset('/img/icons/instagram.png') }}" alt="">
-                    <img src="{{ asset('/img/icons/discord.png') }}" alt="">
+                  <a href="https://twitter.com/"><img src="{{ asset('/img/icons/twitter.png') }}" alt=""></a>
+                  <a href="https://instagram.com/"><img src="{{ asset('/img/icons/instagram.png') }}" alt=""></a>
+                  <a href="https://discord.com/"><img src="{{ asset('/img/icons/discord.png') }}" alt=""></a>
                 </div>
             </div>
 

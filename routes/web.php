@@ -50,6 +50,13 @@ Route::controller(PagesController::class)->group(function () {
     Route::group(['middleware' => ['auth']], function(){
         Route::resource('shoppings', ShoppingController::class);
     });
+
+    /**
+     * Shoppings Results
+     */
+    Route::get('purchase', 'purchase')->name('purchase');
+
+
 });
 
 Route::get('/dashboard', function () {

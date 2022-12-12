@@ -1,0 +1,51 @@
+.container {
+    width: 80%;
+    margin: 5rem auto 6rem auto;
+}
+
+.container .title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 46px;
+}
+
+.container .content {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.container .content .section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 400px;
+    padding: 1.5rem;
+    background-image: url("/public/img/purchase-bg.jpg");
+}
+
+
+/* Small devices*/ 
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 2rem auto 3.5rem auto;
+    }
+
+    .container .content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .container .content .container-items {
+        width: 100%;
+    }
+
+    .container .content .section {
+        width: 100%;
+    }
+
+}

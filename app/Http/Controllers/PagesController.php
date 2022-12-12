@@ -62,4 +62,12 @@ class PagesController extends Controller
     public function dashboard_edit(Nft $nft) {
         return view('dashboard.edit', ['nft' => $nft]);
     }
+
+    /**
+     * Shoppings Results
+     */
+    public function purchase(){
+        return view('purchase');
+    }
+
 }
