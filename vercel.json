@@ -1,9 +1,6 @@
 {
     "version": 2,
-      "framework": null,
-    "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" }
-    },
+    "framework": null,
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
