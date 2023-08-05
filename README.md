@@ -136,4 +136,7 @@ php artisan migrate
 
 # Run the migrations & create the seeders data (create the database tables with faker data)
 php artisan migrate:refresh --seed
+
+# Generate a new encryption key 
+php artisan key:generate
 ```
